@@ -1,0 +1,30 @@
+<mvc:View controllerName="repack.repck.controller.Scanpallet"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.m.semantic">
+    <Page id="page" title="{i18n>HUDetails}"> 
+        <form:SimpleForm id="_IDGenSimpleForm2" editable="true"  layout="ResponsiveGridLayout" singleContainerFullSize="false">
+            <Label text="{i18n>HUnumber}" textAlign="Begin" width="100%" id="idTplnrLabel1" required="false"/>
+            <Input value="" id="hunumber1" textAlign="Left" type="Number" maxLength="20" editable="false"
+             width="50%"/>  
+            <Label text="{i18n>ScanPSApallet}" textAlign="Begin" width="100%" id="idTplnrLabel" required="true"/>
+            <Input value="" id="scanpsapallet" textAlign="Left" type="Number" maxLength="20" liveChange="tbd" change="_onCHangeScanPallet"
+             width="100%"/>
+            <Button id="buttongoscnpallet" width="10%" text="{i18n>Go}" type="Default" tooltip="{i18n>gotooltip}" press="_onCHangeScanPallet"/>
+        </form:SimpleForm>             
+        <content />
+        <footer>
+            <OverflowToolbar id="otbFooter" visible="true">
+                <ToolbarSpacer id="toolbarspacer1"/>
+                <Button id="buttonrepack" text="{i18n>repack}" enabled="false"   type="Emphasized"  tooltip="{i18n>repacktooltip}" press="onrepack"/>
+                <Button  id="buttonreset" text="{i18n>reset}" type="Default" icon="sap-icon://reset" tooltip="{i18n>resettooltip}" press="onresetscr"/>
+                <Button  id="buttoncancel" text="{i18n>cancel}" type="Reject" icon="sap-icon://cancel" tooltip="{i18n>canceltooltip}" press="oncancel"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
